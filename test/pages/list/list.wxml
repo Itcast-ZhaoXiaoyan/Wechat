@@ -1,0 +1,96 @@
+<!--导航栏列表-->
+<view class="list-tab">
+    <ul>
+        <li class="{{current == 0 ? 'active': ''}}" catchtap="switchSlider" data-index="0">默认</li>
+        <li class="{{current == 1 ? 'active': ''}}" catchtap="switchSlider" data-index="1">价格</li>
+        <li class="{{current == 2 ? 'active': ''}}" catchtap="switchSlider" data-index="2">热销</li>
+    </ul>
+</view>
+
+<!--内容区域 swiper滑动视图组件 
+    除了默认设置外，设置class、current当前dom值、bindchange绑定事件
+-->
+<swiper class="swiper-box" current="{{current}}" indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}"  interval="{{swiper.interval}}" duration="{{swiper.duration}}" bindchange="changeSlider">
+    <block>
+
+        <!--导航1 默认-->
+        <swiper-item>
+            <!-- scroll-view滚动视图组件 -->
+            <scroll-view scroll-y="true" class="scroll-box">
+                <view class="list-view">
+                    <!--滚动列表-->
+                    <view class="list-box" wx:for="{{listgoods}}"
+                        wx:for-item="list" wx:key="index" data-id="{{list.id}}"
+                        bindtap="lookdetail">
+                        <!--图片列表-->
+                        <view class="list-image">
+                            <image src="{{list.pic_url}}"></image>
+                        </view>
+                        <!--文字列表-->
+                        <view class="list-text">
+                            <!--商品名称name-->
+                            <text class="name">{{list.name}}</text>
+                            <!--商品价格、规格-->
+                            <view class="txt">
+                                <text class="price">{{list.price}}</text>
+                                <text class="type">{{list.type}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+               
+            </scroll-view>
+        </swiper-item>
+   
+        <!--导航2 价格-->
+        <swiper-item>
+            <scroll-view scroll-y="true" class="scroll-box">
+                <view class="list-view"> 
+                    <!--view滚动列表-->
+                    <view class="list-box" 
+                        wx:for="{{listgoods}}" wx:for-item="list" wx:key="index">
+                        
+                        <!--图片列表-->
+                        <view class="list-image">
+                            <image src="{{list.pic_url}}"></image>
+                        </view>
+                        <!--文字列表-->
+                        <view class="list-text">
+                            <!--商品名称name-->
+                            <text class="name">{{list.name}}</text>
+                            <!--商品价格、规格-->
+                            <view class="txt">
+                                <text class="price">{{list.price}}</text>
+                                <text class="type">{{list.type}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>    
+            </scroll-view>
+        </swiper-item>
+
+        <!--导航3 热销-->
+        <swiper-item>
+            <scroll-view scroll-y="true" class="scroll-box">
+                <view class="list-view">
+                    <view class="list-box"
+                        wx:for="{{listgoods}}" wx:for-item="list" wx:key="index">
+                        <!--左侧图片列表-->
+                        <view class="list-image">
+                        <image src="{{list.pic_url}}"></image>
+                        </view>        
+                        <!--右侧文字显示-->
+                        <view class="list-text">
+                            <text class="name">{{list.name}}</text>
+                            <view class="txt">
+                                <text class="price">{{list.price}}</text>
+                                <text class="type">{{list.type}}</text>
+                            </view>
+                        </view>       
+                    </view>
+                </view>
+               
+            </scroll-view>
+        </swiper-item>
+   </block>
+</swiper>

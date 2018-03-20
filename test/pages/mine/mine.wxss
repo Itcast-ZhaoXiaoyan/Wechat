@@ -1,0 +1,103 @@
+.mine-box {
+    width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue", Arial, "PingFang SC", "Microsoft YahHei", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.user {
+    width: 100%;
+    height: 500rpx;
+}
+
+.user-pic {
+    height: 400rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-text {
+    display: flex;
+    justify-content: center;
+    /*交叉轴y轴 对齐方式*/
+    align-items: center;
+    height: 100rpx;
+    font-size: 14px;
+    color: #008842;
+}
+
+.user-text text {
+    display: flex;
+    /*弹性盒子在主轴x 对齐方式*/
+    justify-content: center;
+    width: 300rpx;
+}
+
+.user image {
+    width: 260rpx;
+    height: 260rpx;
+    border-radius: 130rpx;
+}
+
+.btn {
+    flex: 1;
+    width: 100%;
+}
+
+.btn image {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.btn ul {
+    display: flex;
+    /**/
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn ul li {
+    width: 30%;
+    height: 200rpx;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer {
+    height: 100%;
+}
+
+.footer button {
+    width: 600rpx;
+    margin: 0 auto;
+}
+
+
+/*signin.wxml*/
+
+label {
+    display: flex;
+    flex-direction: column;
+}
+
+label view {
+    display: flex;
+    margin-top: 20rpx;
+}
+
+label view input {
+    flex: 1;
+    border-bottom: 1px solid #aaa;
+}
